@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Scouting</string>
-
-    <string name="hello_world">Let\'s scout</string>
+    <string name="activity_main_title">Teams</string>
     <string name="action_settings">Settings</string>
 </resources>

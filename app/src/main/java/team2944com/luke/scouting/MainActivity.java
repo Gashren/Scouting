@@ -1,36 +1,39 @@
 package team2944com.luke.scouting;
 
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends ActionBarActivity {
-
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ArrayList<Team> teams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mRecyclerView = (RecyclerView) findViewById(R.id.teams_recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.teams_view);
 
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
+        //improve performance by setting the size to fixed
         mRecyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
+        //use linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // specify an adapter (see also next example)
-        mAdapter = new MyAdapter(myDataset);
+        //create an adapter
+        initalizeData();
+        mAdapter = new TeamsListAdapter(teams);
         mRecyclerView.setAdapter(mAdapter);
+
     }
 
     @Override
@@ -53,5 +56,13 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void initalizeData()
+    {
+        teams = new ArrayList<>();
+        teams.add(new Team(2944, "Titanium Tigers", "PiRex"));
+        teams.add(new Team(2557, "SOTABots", "Bot"));
+        teams.add(new Team(254, "Cheesy Poofs", "Deadlift"));
     }
 }
