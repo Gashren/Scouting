@@ -30,7 +30,7 @@ public class TeamsListAdapter extends RecyclerView.Adapter<TeamsListAdapter.Team
             super(itemView);
             teamsCardLayout = (CardView)itemView.findViewById(R.id.teams_card_layout);
             teamNumber = (TextView)itemView.findViewById(R.id.team_number);
-            teamName = (TextView)itemView.findViewById(R.id.team_number);
+            teamName = (TextView)itemView.findViewById(R.id.team_name);
             robotName = (TextView)itemView.findViewById(R.id.robot_name);
         }
     }
@@ -43,6 +43,9 @@ public class TeamsListAdapter extends RecyclerView.Adapter<TeamsListAdapter.Team
     @Override
     public int getItemCount()
     {
+        if(teams == null) {
+            return 0;
+        }
         return teams.size();
     }
 
@@ -57,7 +60,7 @@ public class TeamsListAdapter extends RecyclerView.Adapter<TeamsListAdapter.Team
     @Override
     public void onBindViewHolder(TeamsViewHolder teamsViewHolder, int i)
     {
-        teamsViewHolder.teamNumber.setText(teams.get(i).number);
+        teamsViewHolder.teamNumber.setText(String.valueOf(teams.get(i).number));
         teamsViewHolder.teamName.setText(teams.get(i).name);
         teamsViewHolder.robotName.setText(teams.get(i).robotName);
     }

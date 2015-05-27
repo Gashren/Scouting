@@ -58,6 +58,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //create some dummy data to populate the list
     public void initalizeData()
     {
         teams = new ArrayList<>();
