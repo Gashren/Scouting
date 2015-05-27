@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.melnykov.fab.FloatingActionButton;
+
 import java.util.ArrayList;
 
 
@@ -33,6 +35,10 @@ public class MainActivity extends ActionBarActivity {
         initalizeData();
         mAdapter = new TeamsListAdapter(teams);
         mRecyclerView.setAdapter(mAdapter);
+
+        //Get the floating action button and attach it to the recycler view
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.attachToRecyclerView(mRecyclerView);
 
     }
 
@@ -65,5 +71,7 @@ public class MainActivity extends ActionBarActivity {
         teams.add(new Team(2944, "Titanium Tigers", "PiRex"));
         teams.add(new Team(2557, "SOTABots", "Bot"));
         teams.add(new Team(254, "Cheesy Poofs", "Deadlift"));
+        teams.add(new Team(3216, "TREAD", "Treadbot"));
+        teams.add(new Team(1983, "Skunkworks", "Skunkbot"));
     }
 }
