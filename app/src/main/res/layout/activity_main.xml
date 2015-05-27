@@ -20,6 +20,7 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
         android:src="@drawable/ic_add_team"
+        android:onClick="addNewTeam"
         fab:fab_colorNormal="@color/fab_primary"
         fab:fab_colorPressed="@color/fab_primary_pressed"/>
 
