@@ -1,4 +1,4 @@
-package team2944com.luke.scouting;
+package com.team2944.luke.scouting;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -11,6 +11,10 @@ import android.view.MenuItem;
 import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
+
+import com.team2944.luke.scouting.R;
+import com.team2944.luke.scouting.Team;
+import com.team2944.luke.scouting.TeamsListAdapter;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -78,7 +82,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void launchNewTeam()
     {
-        Intent intent = new Intent(this, NewTeamActivity.class);
+        Intent intent = new Intent(this, EditTeamActivity.class);
         startActivity(intent);
     }
 }

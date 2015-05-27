@@ -1,4 +1,4 @@
-package team2944com.luke.scouting;
+package com.team2944.luke.scouting;
 
 /**
  * Created by Luke on 5/26/2015.
