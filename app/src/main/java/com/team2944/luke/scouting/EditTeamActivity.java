@@ -1,6 +1,10 @@
 package com.team2944.luke.scouting;
 
+import android.app.Notification;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,16 +17,60 @@ import android.support.v7.app.ActionBar.Tab;
 import com.team2944.luke.scouting.R;
 
 
-public class EditTeamActivity extends AppCompatActivity {
+public class EditTeamActivity extends ActionBarActivity{
+    private ViewPager viewPager;
+    private TabsPagerAdapter mAdapter;
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //get the action bar
-        final ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(actionBar.NAVIGATION_MODE_TABS);
-        setContentView(R.layout.activity_edit_team);
+        // Initilization
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        actionBar = getSupportActionBar();
+        mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
+
+        viewPager.setAdapter(mAdapter);
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        //create a tab listener
+        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
+            public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+                // hide the given tab
+            }
+
+            public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+                // probably ignore this event
+            }
+        };
+
+        // Adding Tabs
+        actionBar.addTab(actionBar.newTab().setText("@string/pit_tab_title").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("@string/field_tab_title").setTabListener(tabListener));
+
+        //update tabs when pages are switched
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageSelected(int position) {
+                // on changing the page
+                // make respected tab selected
+                actionBar.setSelectedNavigationItem(position);
+            }
+
+            @Override
+            public void onPageScrolled(int arg0, float arg1, int arg2) {
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int arg0) {
+            }
+        });
     }
 
 

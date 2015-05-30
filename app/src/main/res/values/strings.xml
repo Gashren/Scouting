@@ -4,4 +4,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_edit_team">EditTeamActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="field_tab_title">Field</string>
+    <string name="pit_tab_title">Pit</string>
 </resources>
