@@ -6,9 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 /**
- * A placeholder fragment containing a simple view.
+ * Created by Luke on 5/27/2015.
  */
 public class TeamPitInfoFragment extends Fragment {
 

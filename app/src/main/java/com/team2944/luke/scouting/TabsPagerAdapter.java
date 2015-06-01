@@ -33,4 +33,20 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         // get item count - equal to number of tabs
         return 2;
     }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+
+        switch (position) {
+            case 0:
+                // Pit info fragment activity
+                return "PIT INFO";
+            case 1:
+                // Field info fragment activity
+                return "FIELD INFO";
+            default:
+                return "GETPAGETITLE ERROR";
+
+        }
+    }
 }
