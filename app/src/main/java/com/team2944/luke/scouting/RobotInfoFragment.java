@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 /**
  * Created by Luke on 5/27/2015.
  */
-public class TeamPitInfoFragment extends Fragment {
+public class RobotInfoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_team_pit_info, container, false);
+        return inflater.inflate(R.layout.fragment_robot_info, container, false);
     }
 }

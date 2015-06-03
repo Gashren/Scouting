@@ -54,8 +54,9 @@ public class EditTeamActivity extends ActionBarActivity{
         };
 
         // Adding Tabs
-        actionBar.addTab(actionBar.newTab().setText("PIT").setTabListener(tabListener));
-        actionBar.addTab(actionBar.newTab().setText("FIELD").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("TEAM").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("ROBOT").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("GAME").setTabListener(tabListener));
 
         //update tabs when pages are switched
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
