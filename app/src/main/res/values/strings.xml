@@ -6,4 +6,18 @@
     <string name="hello_world">Hello world!</string>
     <string name="field_tab_title">Field</string>
     <string name="pit_tab_title">Pit</string>
+    <string name="edit_team_number">Number:</string>
+    <string name="edit_team_number_hint">Enter Number</string>
+    <string name="edit_team_name">Name:</string>
+    <string name="edit_team_name_hint">Enter Name</string>
+    <string name="edit_team_location">Location:</string>
+    <string name="edit_team_location_hint">Enter Location</string>
+    <string name="edit_team_notes">Additional Notes:</string>
+    <string name="edit_team_notes_hint">Enter Additional Notes</string>
+    <string name="edit_robot_name">Name:</string>
+    <string name="edit_robot_name_hint">Enter Name</string>
+    <string name="edit_robot_weight">Weight:</string>
+    <string name="edit_robot_weight_hint">Enter Weight</string>
+    <string name="edit_robot_notes">Additional Notes:</string>
+    <string name="edit_robot_notes_hint">Enter Additional Notes</string>
 </resources>
