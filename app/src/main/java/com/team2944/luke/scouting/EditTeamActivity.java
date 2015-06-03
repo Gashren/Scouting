@@ -25,6 +25,7 @@ public class EditTeamActivity extends ActionBarActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_edit_team);
 
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
@@ -53,8 +54,8 @@ public class EditTeamActivity extends ActionBarActivity{
         };
 
         // Adding Tabs
-        actionBar.addTab(actionBar.newTab().setText("@string/pit_tab_title").setTabListener(tabListener));
-        actionBar.addTab(actionBar.newTab().setText("@string/field_tab_title").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("PIT").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("FIELD").setTabListener(tabListener));
 
         //update tabs when pages are switched
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
