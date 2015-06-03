@@ -67,8 +67,7 @@
     <EditText   android:id="@+id/edit_team_notes"
         android:hint="@string/edit_team_notes_hint"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_gravity="bottom"/>
+        android:layout_height="wrap_content"/>
 
 
 

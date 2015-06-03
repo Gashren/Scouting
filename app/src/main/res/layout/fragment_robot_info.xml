@@ -50,7 +50,6 @@
     <EditText   android:id="@+id/edit_robot_notes"
         android:hint="@string/edit_robot_notes_hint"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_gravity="bottom"/>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
