@@ -25,13 +25,17 @@ public class EditTeamActivity extends ActionBarActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_edit_team);
 
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
         actionBar = getSupportActionBar();
         mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
 
+        //Specify the adapter to use with the view pager
         viewPager.setAdapter(mAdapter);
+
+        //Specify the action bar to use tabs
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         //create a tab listener
@@ -50,8 +54,9 @@ public class EditTeamActivity extends ActionBarActivity{
         };
 
         // Adding Tabs
-        actionBar.addTab(actionBar.newTab().setText("@string/pit_tab_title").setTabListener(tabListener));
-        actionBar.addTab(actionBar.newTab().setText("@string/field_tab_title").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("TEAM").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("ROBOT").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("GAME").setTabListener(tabListener));
 
         //update tabs when pages are switched
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -78,7 +83,7 @@ public class EditTeamActivity extends ActionBarActivity{
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_edit_team, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -89,7 +94,7 @@ public class EditTeamActivity extends ActionBarActivity{
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.edit_action_settings) {
             return true;
         }
 

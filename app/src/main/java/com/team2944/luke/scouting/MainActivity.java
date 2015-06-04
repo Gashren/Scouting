@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.melnykov.fab.FloatingActionButton;
 
@@ -62,7 +63,7 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.main_action_settings) {
             return true;
         }
 
@@ -80,7 +81,7 @@ public class MainActivity extends ActionBarActivity {
         teams.add(new Team(1983, "Skunkworks", "Skunkbot"));
     }
 
-    public void launchNewTeam()
+    public void launchNewTeam(View view)
     {
         Intent intent = new Intent(this, EditTeamActivity.class);
         startActivity(intent);
