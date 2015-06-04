@@ -19,10 +19,13 @@ import com.team2944.luke.scouting.TeamsListAdapter;
 
 
 public class MainActivity extends ActionBarActivity {
+    public static final String EXTRA_TEAM_INDEX = "com.team2944.luke.scouting.TEAM_INDEX";
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private ArrayList<Team> teams;
+    private int teamIndex;
+    private Team team;
+    public static ArrayList<Team> teams = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,16 +77,20 @@ public class MainActivity extends ActionBarActivity {
     public void initalizeData()
     {
         teams = new ArrayList<>();
-        teams.add(new Team(2944, "Titanium Tigers", "PiRex"));
-        teams.add(new Team(2557, "SOTABots", "Bot"));
-        teams.add(new Team(254, "Cheesy Poofs", "Deadlift"));
-        teams.add(new Team(3216, "TREAD", "Treadbot"));
-        teams.add(new Team(1983, "Skunkworks", "Skunkbot"));
+        teams.add(new Team("2944", "Titanium Tigers", "PiRex"));
+        teams.add(new Team("2557", "SOTABots", "Bot"));
+        teams.add(new Team("254", "Cheesy Poofs", "Deadlift"));
+        teams.add(new Team("3216", "TREAD", "Treadbot"));
+        teams.add(new Team("1983", "Skunkworks", "Skunkbot"));
     }
 
     public void launchNewTeam(View view)
     {
         Intent intent = new Intent(this, EditTeamActivity.class);
+        team = new Team();
+        teams.add(team);
+        teamIndex = teams.indexOf(team);
+        intent.putExtra(EXTRA_TEAM_INDEX, teamIndex);
         startActivity(intent);
     }
 }
