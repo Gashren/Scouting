@@ -1,4 +1,4 @@
-package com.team2944.luke.scouting;
+package com.team2944.luke.scouting.Adapters;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.team2944.luke.scouting.R;
+import com.team2944.luke.scouting.Team;
+
 import java.util.ArrayList;
-import java.util.PriorityQueue;
 
 /**
  * Created by Luke on 5/26/2015.

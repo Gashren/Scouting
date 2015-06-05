@@ -1,24 +1,20 @@
-package com.team2944.luke.scouting;
+package com.team2944.luke.scouting.Activities;
 
-import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.util.Log;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBar.Tab;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.team2944.luke.scouting.R;
+import com.team2944.luke.scouting.Adapters.TabsPagerAdapter;
+import com.team2944.luke.scouting.Team;
 
 
 public class EditTeamActivity extends ActionBarActivity{
@@ -164,7 +160,7 @@ public class EditTeamActivity extends ActionBarActivity{
 
         //create toast for feedback
         context = getApplicationContext();
-        text = "New team saved";
+        text = "Team " + teamNumber + " saved";
         duration = Toast.LENGTH_LONG;
 
         Toast toast = Toast.makeText(context, text, duration);

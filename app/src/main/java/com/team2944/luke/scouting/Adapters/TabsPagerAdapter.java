@@ -1,8 +1,12 @@
-package com.team2944.luke.scouting;
+package com.team2944.luke.scouting.Adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.team2944.luke.scouting.Fragments.GameInfoFragment;
+import com.team2944.luke.scouting.Fragments.RobotInfoFragment;
+import com.team2944.luke.scouting.Fragments.TeamInfoFragment;
 
 /**
  * Created by Luke on 5/27/2015.

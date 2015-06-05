@@ -1,4 +1,4 @@
-package com.team2944.luke.scouting;
+package com.team2944.luke.scouting.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import com.team2944.luke.scouting.R;
 import com.team2944.luke.scouting.Team;
-import com.team2944.luke.scouting.TeamsListAdapter;
+import com.team2944.luke.scouting.Adapters.TeamsListAdapter;
 
 
 public class MainActivity extends ActionBarActivity {
