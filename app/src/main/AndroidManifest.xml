@@ -24,6 +24,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
         </activity>
+        <activity
+            android:name=".Activities.ViewTeamActivity"
+            android:label="@string/title_activity_view_team"
+            android:parentActivityName=".Activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.team2944.luke.scouting.Activities.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,48 +1,26 @@
 package com.team2944.luke.scouting.Activities;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v7.app.ActionBar;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import com.team2944.luke.scouting.R;
 import com.team2944.luke.scouting.Adapters.EditTeamTabsPagerAdapter;
-import com.team2944.luke.scouting.Team;
+import com.team2944.luke.scouting.R;
 
+public class ViewTeamActivity extends ActionBarActivity {
 
-public class EditTeamActivity extends ActionBarActivity{
     private ViewPager viewPager;
     private EditTeamTabsPagerAdapter mAdapter;
     private ActionBar actionBar;
-    private String teamNumber;
-    private String teamName;
-    private String teamLocation;
-    private String teamNotes;
-    private String robotName;
-    private String robotWeight;
-    private String robotNotes;
-    private Team team;
-    private int teamIndex;
-    Context context;
-    CharSequence text;
-    int duration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_team);
-
-        //Get intent from main activity so we can get the index
-        //of the new team from the intent's extra
-        Intent intent = getIntent();
-        teamIndex = intent.getIntExtra(MainActivity.EXTRA_TEAM_INDEX, 0);
+        setContentView(R.layout.activity_view_team);
 
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
@@ -111,64 +89,9 @@ public class EditTeamActivity extends ActionBarActivity{
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.edit_action_save:
-                saveTeamInfoChanges();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-
-    public void getFieldValues() {
-        //called to retrieve the strings from the input fields
-        EditText editTextTeamNumber = (EditText) findViewById(R.id.edit_team_number);
-        teamNumber = editTextTeamNumber.getText().toString();
-
-        EditText editTextTeamName = (EditText) findViewById(R.id.edit_team_name);
-        teamName = editTextTeamName.getText().toString();
-
-        EditText editTextTeamLocatoin = (EditText) findViewById(R.id.edit_team_location);
-        teamLocation = editTextTeamLocatoin.getText().toString();
-
-        EditText editTextTeamNotes = (EditText) findViewById(R.id.edit_team_notes);
-        teamNotes = editTextTeamNotes.getText().toString();
-
-        EditText editTextRobotName = (EditText) findViewById(R.id.edit_robot_name);
-        robotName = editTextRobotName.getText().toString();
-
-        EditText editTextRobotWeight = (EditText) findViewById(R.id.edit_robot_weight);
-        robotWeight = editTextRobotWeight.getText().toString();
-
-        EditText editTextRobotNotes = (EditText) findViewById(R.id.edit_robot_notes);
-        robotNotes = editTextRobotNotes.getText().toString();
-
-    }
-
-    public void saveTeamInfoChanges() {
-        //called when save button is pressed, updates input values to team object in the teams array list
-        getFieldValues();
-
-        team = new Team();
-        team.number = this.teamNumber;
-        team.name = this.teamName;
-        team.location = this.teamLocation;
-        team.teamNotes = this.teamNotes;
-        team.robotName = this.robotName;
-        team.robotWeight = this.robotWeight;
-        team.robotNotes = this.robotNotes;
-
-        MainActivity.teams.set(teamIndex, team);
-
-        //create toast for feedback
-        context = getApplicationContext();
-        text = "Team " + teamNumber + " saved";
-        duration = Toast.LENGTH_LONG;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
-        //return to main activity
-        finish();
-
-    }
-
 }

@@ -4,16 +4,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.team2944.luke.scouting.Fragments.GameInfoFragment;
-import com.team2944.luke.scouting.Fragments.RobotInfoFragment;
-import com.team2944.luke.scouting.Fragments.TeamInfoFragment;
+import com.team2944.luke.scouting.Fragments.ViewGameInfoFragment;
+import com.team2944.luke.scouting.Fragments.ViewRobotInfoFragment;
+import com.team2944.luke.scouting.Fragments.ViewTeamInfoFragment;
 
 /**
- * Created by Luke on 5/27/2015.
+ * Created by 536034 on 6/8/2015.
  */
-public class TabsPagerAdapter extends FragmentPagerAdapter {
+public class ViewTeamTabsPagerAdapter extends FragmentPagerAdapter {
 
-    public TabsPagerAdapter(FragmentManager fm) {
+    public ViewTeamTabsPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
@@ -23,13 +23,13 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         switch (index) {
             case 0:
                 // team info fragment activity
-                return new TeamInfoFragment();
+                return new ViewTeamInfoFragment();
             case 1:
                 // robot info fragment activity
-                return new RobotInfoFragment();
+                return new ViewRobotInfoFragment();
             case 2:
                 // game info fragment activity
-                return new GameInfoFragment();
+                return new ViewGameInfoFragment();
         }
 
         return null;
@@ -59,4 +59,5 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 
         }
     }
+
 }

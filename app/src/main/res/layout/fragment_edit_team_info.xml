@@ -11,13 +11,13 @@
         android:orientation="horizontal"
         android:paddingBottom="16dp">
 
-        <TextView android:text="@string/edit_team_number"
+        <TextView android:text="@string/team_number"
             android:layout_width="90sp"
             android:layout_height="wrap_content"
             android:textSize="20sp"/>
 
         <EditText android:id="@+id/edit_team_number"
-            android:hint="@string/edit_team_number_hint"
+            android:hint="@string/team_number_hint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
@@ -29,13 +29,13 @@
         android:orientation="horizontal"
         android:paddingBottom="16dp">
 
-        <TextView android:text="@string/edit_team_name"
+        <TextView android:text="@string/team_name"
             android:layout_width="90sp"
             android:layout_height="wrap_content"
             android:textSize="20sp"/>
 
         <EditText android:id="@+id/edit_team_name"
-            android:hint="@string/edit_team_name_hint"
+            android:hint="@string/team_name_hint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
@@ -47,25 +47,25 @@
         android:orientation="horizontal"
         android:paddingBottom="16dp">
 
-        <TextView android:text="@string/edit_team_location"
+        <TextView android:text="@string/team_location"
             android:layout_width="90sp"
             android:layout_height="wrap_content"
             android:textSize="20sp"/>
 
         <EditText android:id="@+id/edit_team_location"
-            android:hint="@string/edit_team_location_hint"
+            android:hint="@string/team_location_hint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
     </LinearLayout>
 
-    <TextView   android:text="@string/edit_team_notes"
+    <TextView   android:text="@string/team_notes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"/>
 
     <EditText   android:id="@+id/edit_team_notes"
-        android:hint="@string/edit_team_notes_hint"
+        android:hint="@string/team_notes_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
