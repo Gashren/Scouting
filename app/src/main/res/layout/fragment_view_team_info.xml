@@ -17,7 +17,6 @@
             android:textSize="20sp"/>
 
         <TextView android:id="@+id/view_team_number"
-            android:hint="@string/team_number_hint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
@@ -35,7 +34,6 @@
             android:textSize="20sp"/>
 
         <TextView android:id="@+id/view_team_name"
-            android:hint="@string/team_name_hint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
@@ -53,7 +51,6 @@
             android:textSize="20sp"/>
 
         <TextView android:id="@+id/view_team_location"
-            android:hint="@string/team_location_hint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
@@ -65,7 +62,6 @@
         android:textSize="20sp"/>
 
     <TextView   android:id="@+id/view_team_notes"
-        android:hint="@string/team_notes_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

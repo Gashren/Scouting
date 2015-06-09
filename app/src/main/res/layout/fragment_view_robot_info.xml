@@ -17,7 +17,6 @@
             android:textSize="20sp"/>
 
         <TextView android:id="@+id/view_robot_name"
-            android:hint="@string/robot_name_hint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -35,7 +34,6 @@
             android:textSize="20sp"/>
 
         <TextView android:id="@+id/view_robot_weight"
-            android:hint="@string/robot_weight_hint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -48,7 +46,6 @@
         android:textSize="20sp"/>
 
     <TextView   android:id="@+id/view_robot_notes"
-        android:hint="@string/robot_notes_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
