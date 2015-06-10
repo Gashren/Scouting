@@ -7,15 +7,29 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.team2944.luke.scouting.Adapters.EditTeamTabsPagerAdapter;
+import com.team2944.luke.scouting.Adapters.ViewTeamTabsPagerAdapter;
 import com.team2944.luke.scouting.R;
+import com.team2944.luke.scouting.Team;
+
+import org.w3c.dom.Text;
 
 public class ViewTeamActivity extends ActionBarActivity {
 
     private ViewPager viewPager;
-    private EditTeamTabsPagerAdapter mAdapter;
+    private ViewTeamTabsPagerAdapter mAdapter;
     private ActionBar actionBar;
+    private String teamNumber;
+    private String teamName;
+    private String teamLocation;
+    private String teamNotes;
+    private String robotName;
+    private String robotWeight;
+    private String robotNotes;
+    private Team team;
+    private int teamIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +39,7 @@ public class ViewTeamActivity extends ActionBarActivity {
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
         actionBar = getSupportActionBar();
-        mAdapter = new EditTeamTabsPagerAdapter(getSupportFragmentManager());
+        mAdapter = new ViewTeamTabsPagerAdapter(getSupportFragmentManager());
 
 
         //Specify the adapter to use with the view pager
@@ -93,5 +107,19 @@ public class ViewTeamActivity extends ActionBarActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void getFields() {
+        //Get the textviews so we can assign values to them
+        //to be displayed
+
+        TextView viewTeamNumber = (TextView) findViewById(R.id.view_team_number);
+        TextView viewTeamName = (TextView) findViewById(R.id.view_team_name);
+        TextView viewTeamLocation = (TextView) findViewById(R.id.view_team_location);
+        TextView viewTeamNotes = (TextView) findViewById(R.id.view_team_notes);
+
+        TextView viewRobotName = (TextView) findViewById(R.id.view_robot_name);
+        TextView viewRobotWeight = (TextView) findViewById(R.id.view_robot_weight);
+        TextView viewRobotNotes = (TextView) findViewById(R.id.view_robot_notes);
     }
 }

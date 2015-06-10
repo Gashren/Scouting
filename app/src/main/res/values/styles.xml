@@ -8,7 +8,7 @@
 
     <style name="MyActionBar"
         parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
-        <item name="backgroud">@drawable/ActionBar_Background</item>
+        <item name="android:background">#33b5e5</item>
     </style>
 
 </resources>
