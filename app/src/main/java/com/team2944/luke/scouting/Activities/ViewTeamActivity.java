@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.team2944.luke.scouting.Adapters.EditTeamTabsPagerAdapter;
 import com.team2944.luke.scouting.Adapters.ViewTeamTabsPagerAdapter;
+import com.team2944.luke.scouting.Fragments.ViewRobotInfoFragment;
 import com.team2944.luke.scouting.Fragments.ViewTeamInfoFragment;
 import com.team2944.luke.scouting.R;
 import com.team2944.luke.scouting.Team;
@@ -114,6 +115,12 @@ public class ViewTeamActivity extends ActionBarActivity {
         //Update the textviews with the correct info from the team object
 
         ViewTeamInfoFragment.teamNumber.setText(team.number);
+        ViewTeamInfoFragment.teamName.setText(team.name);
+        ViewTeamInfoFragment.teamLocation.setText(team.location);
+        ViewTeamInfoFragment.teamNotes.setText(team.teamNotes);
 
+        ViewRobotInfoFragment.robotName.setText(team.robotName);
+        ViewRobotInfoFragment.robotWeight.setText(team.robotWeight);
+        ViewRobotInfoFragment.robotNotes.setText(team.robotNotes);
     }
 }
