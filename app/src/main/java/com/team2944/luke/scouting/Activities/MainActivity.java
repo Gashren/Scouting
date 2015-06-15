@@ -19,7 +19,6 @@ import com.team2944.luke.scouting.Adapters.TeamsListAdapter;
 
 
 public class MainActivity extends ActionBarActivity {
-    public static final String EXTRA_TEAM_INDEX = "com.team2944.luke.scouting.TEAM_INDEX";
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -90,7 +89,7 @@ public class MainActivity extends ActionBarActivity {
         team = new Team();
         teams.add(team);
         teamIndex = teams.indexOf(team);
-        intent.putExtra(EXTRA_TEAM_INDEX, teamIndex);
+        intent.putExtra(getString(R.string.get_extra_team_index), teamIndex);
         startActivity(intent);
     }
 }

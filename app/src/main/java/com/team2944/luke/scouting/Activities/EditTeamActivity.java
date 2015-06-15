@@ -42,7 +42,7 @@ public class EditTeamActivity extends ActionBarActivity{
         //Get intent from main activity so we can get the index
         //of the new team from the intent's extra
         Intent intent = getIntent();
-        teamIndex = intent.getIntExtra(MainActivity.EXTRA_TEAM_INDEX, 0);
+        teamIndex = intent.getIntExtra(getString(R.string.get_extra_team_index), 0);
 
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
@@ -166,8 +166,10 @@ public class EditTeamActivity extends ActionBarActivity{
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
 
-        //return to main activity
-        finish();
+        //start a new view team activity for the team object we just made
+        Intent intent = new Intent(this, ViewTeamActivity.class);
+        intent.putExtra(getString(R.string.get_extra_team_index), teamIndex);
+        startActivity(intent);
 
     }
 

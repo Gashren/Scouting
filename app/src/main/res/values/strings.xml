@@ -6,6 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="field_tab_title">Field</string>
     <string name="pit_tab_title">Pit</string>
+    <string name="get_extra_team_index">com.team2944.luke.scouting.GET_EXTRA_TEAM_INDEX</string>
 
     <string name="team_number">Number:</string>
     <string name="team_number_hint">Enter Number</string>

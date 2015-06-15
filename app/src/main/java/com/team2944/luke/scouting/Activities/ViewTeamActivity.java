@@ -1,5 +1,6 @@
 package com.team2944.luke.scouting.Activities;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.team2944.luke.scouting.Adapters.EditTeamTabsPagerAdapter;
 import com.team2944.luke.scouting.Adapters.ViewTeamTabsPagerAdapter;
+import com.team2944.luke.scouting.Fragments.ViewTeamInfoFragment;
 import com.team2944.luke.scouting.R;
 import com.team2944.luke.scouting.Team;
 
@@ -21,13 +23,6 @@ public class ViewTeamActivity extends ActionBarActivity {
     private ViewPager viewPager;
     private ViewTeamTabsPagerAdapter mAdapter;
     private ActionBar actionBar;
-    private String teamNumber;
-    private String teamName;
-    private String teamLocation;
-    private String teamNotes;
-    private String robotName;
-    private String robotWeight;
-    private String robotNotes;
     private Team team;
     private int teamIndex;
 
@@ -35,6 +30,11 @@ public class ViewTeamActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_team);
+
+        //get the team from the intent
+        Intent intent = getIntent();
+        teamIndex = intent.getIntExtra(getString(R.string.get_extra_team_index), 0);
+        team = MainActivity.teams.get(teamIndex);
 
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
@@ -86,6 +86,7 @@ public class ViewTeamActivity extends ActionBarActivity {
             public void onPageScrollStateChanged(int arg0) {
             }
         });
+        assignValues();
     }
 
 
@@ -109,17 +110,10 @@ public class ViewTeamActivity extends ActionBarActivity {
         }
     }
 
-    public void getFields() {
-        //Get the textviews so we can assign values to them
-        //to be displayed
+    public void assignValues() {
+        //Update the textviews with the correct info from the team object
 
-        TextView viewTeamNumber = (TextView) findViewById(R.id.view_team_number);
-        TextView viewTeamName = (TextView) findViewById(R.id.view_team_name);
-        TextView viewTeamLocation = (TextView) findViewById(R.id.view_team_location);
-        TextView viewTeamNotes = (TextView) findViewById(R.id.view_team_notes);
+        ViewTeamInfoFragment.teamNumber.setText(team.number);
 
-        TextView viewRobotName = (TextView) findViewById(R.id.view_robot_name);
-        TextView viewRobotWeight = (TextView) findViewById(R.id.view_robot_weight);
-        TextView viewRobotNotes = (TextView) findViewById(R.id.view_robot_notes);
     }
 }
