@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class TeamsListAdapter extends RecyclerView.Adapter<TeamsListAdapter.TeamsViewHolder>
 {
 
-    private ArrayList<Team> teams;
+    public static ArrayList<Team> teams = new ArrayList<>();
 
     public static class TeamsViewHolder extends RecyclerView.ViewHolder
     {
@@ -71,5 +71,17 @@ public class TeamsListAdapter extends RecyclerView.Adapter<TeamsListAdapter.Team
     public void onAttachedToRecyclerView(RecyclerView recyclerView)
     {
         super.onAttachedToRecyclerView(recyclerView);
+    }
+
+    public static void addTeamToList(Team team){
+        teams.add(team);
+    }
+
+    public static int getTeamIndex(Team team) {
+        return teams.indexOf(team);
+    }
+
+    public static ArrayList<Team> getTeamsList(){
+        return teams;
     }
 }

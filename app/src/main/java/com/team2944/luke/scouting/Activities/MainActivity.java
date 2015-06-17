@@ -20,11 +20,10 @@ import com.team2944.luke.scouting.Adapters.TeamsListAdapter;
 
 public class MainActivity extends ActionBarActivity {
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private static RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private int teamIndex;
     private Team team;
-    public static ArrayList<Team> teams = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,7 @@ public class MainActivity extends ActionBarActivity {
 
         //create an adapter
         initalizeData();
-        mAdapter = new TeamsListAdapter(teams);
+        mAdapter = new TeamsListAdapter(TeamsListAdapter.getTeamsList());
         mRecyclerView.setAdapter(mAdapter);
 
         //Get the floating action button and attach it to the recycler view
@@ -75,21 +74,24 @@ public class MainActivity extends ActionBarActivity {
     //create some dummy data to populate the list
     public void initalizeData()
     {
-        teams = new ArrayList<>();
-        teams.add(new Team("2944", "Titanium Tigers", "PiRex"));
-        teams.add(new Team("2557", "SOTABots", "Bot"));
-        teams.add(new Team("254", "Cheesy Poofs", "Deadlift"));
-        teams.add(new Team("3216", "TREAD", "Treadbot"));
-        teams.add(new Team("1983", "Skunkworks", "Skunkbot"));
+        TeamsListAdapter.addTeamToList(new Team("2944", "Titanium Tigers", "PiRex"));
+        TeamsListAdapter.addTeamToList(new Team("2557", "SOTABots", "Bot"));
+        TeamsListAdapter.addTeamToList(new Team("254", "Cheesy Poofs", "Deadlift"));
+        TeamsListAdapter.addTeamToList(new Team("3216", "TREAD", "Treadbot"));
+        TeamsListAdapter.addTeamToList(new Team("1983", "Skunkworks", "Skunkbot"));
     }
 
     public void launchNewTeam(View view)
     {
         Intent intent = new Intent(this, EditTeamActivity.class);
         team = new Team();
-        teams.add(team);
-        teamIndex = teams.indexOf(team);
+        TeamsListAdapter.addTeamToList(team);
+        teamIndex = TeamsListAdapter.getTeamIndex(team);
         intent.putExtra(getString(R.string.get_extra_team_index), teamIndex);
         startActivity(intent);
+    }
+
+    public static void notifyDataSetChangedWrapper(){
+        mAdapter.notifyDataSetChanged();
     }
 }

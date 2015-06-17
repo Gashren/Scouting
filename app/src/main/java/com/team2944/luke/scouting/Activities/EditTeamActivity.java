@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBar;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.team2944.luke.scouting.Adapters.TeamsListAdapter;
 import com.team2944.luke.scouting.R;
 import com.team2944.luke.scouting.Adapters.EditTeamTabsPagerAdapter;
 import com.team2944.luke.scouting.Team;
@@ -21,13 +22,13 @@ public class EditTeamActivity extends ActionBarActivity{
     private ViewPager viewPager;
     private EditTeamTabsPagerAdapter mAdapter;
     private ActionBar actionBar;
-    private String teamNumber;
-    private String teamName;
-    private String teamLocation;
-    private String teamNotes;
-    private String robotName;
-    private String robotWeight;
-    private String robotNotes;
+    private String teamNumber = "";
+    private String teamName = "";
+    private String teamLocation = "";
+    private String teamNotes = "";
+    private String robotName = "";
+    private String robotWeight = "";
+    private String robotNotes = "";
     private Team team;
     private int teamIndex;
     Context context;
@@ -156,7 +157,7 @@ public class EditTeamActivity extends ActionBarActivity{
         team.robotWeight = this.robotWeight;
         team.robotNotes = this.robotNotes;
 
-        MainActivity.teams.set(teamIndex, team);
+        TeamsListAdapter.getTeamsList().set(teamIndex, team);
 
         //create toast for feedback
         context = getApplicationContext();
@@ -166,10 +167,17 @@ public class EditTeamActivity extends ActionBarActivity{
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
 
+        //update the recyclerview
+        MainActivity.notifyDataSetChangedWrapper();
+
+        /**
         //start a new view team activity for the team object we just made
         Intent intent = new Intent(this, ViewTeamActivity.class);
         intent.putExtra(getString(R.string.get_extra_team_index), teamIndex);
         startActivity(intent);
+         **/
+
+        finish();
 
     }
 

@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.team2944.luke.scouting.Adapters.EditTeamTabsPagerAdapter;
+import com.team2944.luke.scouting.Adapters.TeamsListAdapter;
 import com.team2944.luke.scouting.Adapters.ViewTeamTabsPagerAdapter;
 import com.team2944.luke.scouting.Fragments.ViewRobotInfoFragment;
 import com.team2944.luke.scouting.Fragments.ViewTeamInfoFragment;
@@ -35,7 +36,7 @@ public class ViewTeamActivity extends ActionBarActivity {
         //get the team from the intent
         Intent intent = getIntent();
         teamIndex = intent.getIntExtra(getString(R.string.get_extra_team_index), 0);
-        team = MainActivity.teams.get(teamIndex);
+        team = TeamsListAdapter.getTeamsList().get(teamIndex);
 
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
