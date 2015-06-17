@@ -84,4 +84,8 @@ public class TeamsListAdapter extends RecyclerView.Adapter<TeamsListAdapter.Team
     public static ArrayList<Team> getTeamsList(){
         return teams;
     }
+
+    public void launchNewTeam() {
+
+    }
 }

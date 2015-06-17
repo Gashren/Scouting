@@ -14,6 +14,7 @@ import com.melnykov.fab.FloatingActionButton;
 import java.util.ArrayList;
 
 import com.team2944.luke.scouting.R;
+import com.team2944.luke.scouting.RecyclerItemClickListener;
 import com.team2944.luke.scouting.Team;
 import com.team2944.luke.scouting.Adapters.TeamsListAdapter;
 
@@ -46,6 +47,17 @@ public class MainActivity extends ActionBarActivity {
         //Get the floating action button and attach it to the recycler view
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.attachToRecyclerView(mRecyclerView);
+
+        mRecyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getApplicationContext(), ViewTeamActivity.class);
+                        intent.putExtra(getString(R.string.get_extra_team_index), position);
+                        startActivity(intent);
+                    }
+                })
+        );
 
     }
 
@@ -81,8 +93,7 @@ public class MainActivity extends ActionBarActivity {
         TeamsListAdapter.addTeamToList(new Team("1983", "Skunkworks", "Skunkbot"));
     }
 
-    public void launchNewTeam(View view)
-    {
+    public void launchNewTeam(View view) {
         Intent intent = new Intent(this, EditTeamActivity.class);
         team = new Team();
         TeamsListAdapter.addTeamToList(team);

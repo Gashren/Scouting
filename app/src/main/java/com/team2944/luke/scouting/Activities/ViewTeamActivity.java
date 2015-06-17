@@ -27,6 +27,7 @@ public class ViewTeamActivity extends ActionBarActivity {
     private ActionBar actionBar;
     private Team team;
     private int teamIndex;
+    private String test = "test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +116,7 @@ public class ViewTeamActivity extends ActionBarActivity {
     public void assignValues() {
         //Update the textviews with the correct info from the team object
 
+        /**
         ViewTeamInfoFragment.teamNumber.setText(team.number);
         ViewTeamInfoFragment.teamName.setText(team.name);
         ViewTeamInfoFragment.teamLocation.setText(team.location);
@@ -123,5 +125,15 @@ public class ViewTeamActivity extends ActionBarActivity {
         ViewRobotInfoFragment.robotName.setText(team.robotName);
         ViewRobotInfoFragment.robotWeight.setText(team.robotWeight);
         ViewRobotInfoFragment.robotNotes.setText(team.robotNotes);
+         **/
+
+        ViewTeamInfoFragment.teamNumber.setText(test);
+        ViewTeamInfoFragment.teamName.setText(test);
+        ViewTeamInfoFragment.teamLocation.setText(test);
+        ViewTeamInfoFragment.teamNotes.setText(test);
+
+        ViewRobotInfoFragment.robotName.setText(test);
+        ViewRobotInfoFragment.robotWeight.setText(test);
+        ViewRobotInfoFragment.robotNotes.setText(test);
     }
 }
