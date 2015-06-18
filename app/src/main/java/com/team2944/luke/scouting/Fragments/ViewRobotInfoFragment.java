@@ -25,9 +25,9 @@ public class ViewRobotInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view_robot_info, container, false);
 
-        robotName = (TextView) view.findViewById(R.id.view_robot_name);
-        robotWeight = (TextView) view.findViewById(R.id.view_robot_weight);
-        robotNotes = (TextView) view.findViewById(R.id.view_robot_notes);
+        robotName = (TextView) getActivity().findViewById(R.id.view_robot_name);
+        robotWeight = (TextView) getActivity().findViewById(R.id.view_robot_weight);
+        robotNotes = (TextView) getActivity().findViewById(R.id.view_robot_notes);
 
         return view;
     }

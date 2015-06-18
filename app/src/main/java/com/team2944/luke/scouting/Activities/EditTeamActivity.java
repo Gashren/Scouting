@@ -170,10 +170,14 @@ public class EditTeamActivity extends ActionBarActivity{
         //update the recyclerview
         MainActivity.notifyDataSetChangedWrapper();
 
+        /**
         //start a new view team activity for the team object we just made
         Intent intent = new Intent(this, ViewTeamActivity.class);
         intent.putExtra(getString(R.string.get_extra_team_index), teamIndex);
         startActivity(intent);
+         **/
+
+        finish();
     }
 
 }

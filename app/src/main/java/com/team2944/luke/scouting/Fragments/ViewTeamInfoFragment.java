@@ -27,11 +27,15 @@ public class ViewTeamInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_view_team_info, container, false);
 
-        teamNumber = (TextView) view.findViewById(R.id.view_team_number);
-        teamName = (TextView) view.findViewById(R.id.view_team_name);
-        teamLocation = (TextView) view.findViewById(R.id.view_team_location);
-        teamNotes = (TextView) view.findViewById(R.id.view_team_notes);
+        teamNumber = (TextView) getActivity().findViewById(R.id.view_team_number);
+        teamName = (TextView) getActivity().findViewById(R.id.view_team_name);
+        teamLocation = (TextView) getActivity().findViewById(R.id.view_team_location);
+        teamNotes = (TextView) getActivity().findViewById(R.id.view_team_notes);
 
         return view;
+    }
+
+    public void setTeamNumberText(String text){
+        teamNumber.setText(text);
     }
 }
